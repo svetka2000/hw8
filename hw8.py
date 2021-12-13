@@ -10,11 +10,11 @@ class Seq(Generic[T]):
         self.seq = seq
 
     def filter(self, function):
-        self.__init__(filter(function, self.seq))
+        self.seq = (filter(function, self.seq))
         return self
 
     def map(self, function):
-        self.__init__(map(function, self.seq))
+        self.seq = (map(function, self.seq))
         return self
 
     def take(self, len: int) -> list[T]:
